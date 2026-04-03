@@ -17,135 +17,161 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Case 01 - radiasi tinggi
+      - name: Case 01 - contoh resmi
         id: case-01
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 01 - radiasi tinggi
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "2 371 6 10"
-          expected-output: "TOLAK"
+          test-name: Case 01 - contoh resmi
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "4 Ares 10 91 Boreal 8 91 Cygnus 7 85 Draco 8 95"
+          expected-output: |-
+            Draco 8 95
+            Boreal 8 91
+            Ares 10 91
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 02 - suhu karantina
+      - name: Case 02 - N kurang dari 3
         id: case-02
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 02 - suhu karantina
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "2 390 1 10"
-          expected-output: "KARANTINA"
+          test-name: Case 02 - N kurang dari 3
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "2 Nova 5 80 Orion 4 90"
+          expected-output: |-
+            Orion 4 90
+            Nova 5 80
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 03 - izin satu jam terlalu pagi
+      - name: Case 03 - N sama dengan 1
         id: case-03
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 03 - izin satu jam terlalu pagi
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "1 370 0 5"
-          expected-output: "TOLAK"
+          test-name: Case 03 - N sama dengan 1
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "1 Zeph 3 77"
+          expected-output: "Zeph 3 77"
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 04 - izin satu normal
+      - name: Case 04 - ranking kemurnian
         id: case-04
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 04 - izin satu normal
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "1 371 2 10"
-          expected-output: "MASUK"
+          test-name: Case 04 - ranking kemurnian
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "4 A 10 50 B 9 80 C 8 70 D 7 60"
+          expected-output: |-
+            B 9 80
+            C 8 70
+            D 7 60
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 05 - izin dua lolos batas bawah jam
+      - name: Case 05 - tie massa lebih kecil
         id: case-05
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 05 - izin dua lolos batas bawah jam
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "2 371 2 8"
-          expected-output: "MASUK"
+          test-name: Case 05 - tie massa lebih kecil
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "4 Atlas 10 90 Boreal 7 90 Comet 8 90 Draco 9 90"
+          expected-output: |-
+            Boreal 7 90
+            Comet 8 90
+            Draco 9 90
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 06 - izin dua lolos batas atas jam
+      - name: Case 06 - tie nama alfabetis
         id: case-06
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 06 - izin dua lolos batas atas jam
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "2 371 1 18"
-          expected-output: "MASUK"
+          test-name: Case 06 - tie nama alfabetis
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "4 Zeta 5 88 Alpha 5 88 Gamma 5 88 Beta 5 88"
+          expected-output: |-
+            Alpha 5 88
+            Beta 5 88
+            Gamma 5 88
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 07 - izin dua pemeriksaan karena radiasi
+      - name: Case 07 - campuran lengkap
         id: case-07
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 07 - izin dua pemeriksaan karena radiasi
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "2 371 3 10"
-          expected-output: "PEMERIKSAAN"
+          test-name: Case 07 - campuran lengkap
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "6 N1 5 91 N2 4 95 N3 3 95 N4 2 90 N5 1 95 N6 6 80"
+          expected-output: |-
+            N5 1 95
+            N3 3 95
+            N2 4 95
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 08 - izin dua pemeriksaan karena jam
+      - name: Case 08 - lebih dari tiga data
         id: case-08
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 08 - izin dua pemeriksaan karena jam
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "2 371 1 7"
-          expected-output: "PEMERIKSAAN"
+          test-name: Case 08 - lebih dari tiga data
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "5 M1 7 70 M2 6 71 M3 5 72 M4 4 73 M5 3 74"
+          expected-output: |-
+            M5 3 74
+            M4 4 73
+            M3 5 72
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 09 - izin tiga lolos
+      - name: Case 09 - semua sama kecuali nama
         id: case-09
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 09 - izin tiga lolos
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "3 379 0 12"
-          expected-output: "MASUK"
+          test-name: Case 09 - semua sama kecuali nama
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "4 Delta 9 90 Alpha 9 90 Charlie 9 90 Bravo 9 90"
+          expected-output: |-
+            Alpha 9 90
+            Bravo 9 90
+            Charlie 9 90
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
-      - name: Case 10 - izin tiga gagal
+      - name: Case 10 - N sama dengan 3
         id: case-10
         uses: classroom-resources/autograding-io-grader@v1
         with:
-          test-name: Case 10 - izin tiga gagal
-          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal1 soal1.c
-          command: ./soal1
-          input: "3 380 0 12"
-          expected-output: "TOLAK"
+          test-name: Case 10 - N sama dengan 3
+          setup-command: gcc -std=c11 -O2 -Wall -Wextra -o soal2 soal2.c
+          command: ./soal2
+          input: "3 X 10 50 Y 5 60 Z 7 55"
+          expected-output: |-
+            Y 5 60
+            Z 7 55
+            X 10 50
           comparison-method: exact
           timeout: 2
-          max-score: 5
+          max-score: 10
 
       - name: Autograding Reporter
         uses: classroom-resources/autograding-grading-reporter@v1
